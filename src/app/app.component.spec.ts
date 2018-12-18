@@ -5,7 +5,11 @@ import { MockComponent } from 'ng2-mock-component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, MockComponent({ selector: 'app-heroes' })]
+      declarations: [
+        AppComponent,
+        MockComponent({ selector: 'app-heroes' }),
+        MockComponent({ selector: 'app-messages' })
+      ]
     }).compileComponents();
   }));
 
