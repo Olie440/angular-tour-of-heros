@@ -1,6 +1,5 @@
+import { MockComponent } from 'ng2-mock-component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
-
 import { HeroesComponent } from './heroes.component';
 
 describe('HeroesComponent', () => {
@@ -9,9 +8,9 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroesComponent ],
-      imports: [
-        FormsModule
+      declarations: [
+        HeroesComponent,
+        MockComponent({ selector: 'app-hero-detail', inputs: ['hero'] })
       ]
     })
     .compileComponents();
