@@ -12,8 +12,7 @@ describe('HeroesComponent', () => {
         HeroesComponent,
         MockComponent({ selector: 'app-hero-detail', inputs: ['hero'] })
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

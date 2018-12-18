@@ -9,10 +9,9 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroDetailComponent ],
-      imports: [ FormsModule ]
-    })
-    .compileComponents();
+      declarations: [HeroDetailComponent],
+      imports: [FormsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

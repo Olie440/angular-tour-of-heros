@@ -5,10 +5,7 @@ import { MockComponent } from 'ng2-mock-component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        MockComponent({ selector: 'app-heroes' })
-      ],
+      declarations: [AppComponent, MockComponent({ selector: 'app-heroes' })]
     }).compileComponents();
   }));
 
@@ -28,6 +25,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Tour of Heros!');
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Welcome to Tour of Heros!'
+    );
   });
 });
