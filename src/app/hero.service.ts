@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HeroService {
-  private heroesUrl = 'api/heroes'; // URL to web api
+  static heroesUrl = 'http://api/heroes'; // URL to web api
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
@@ -35,15 +35,17 @@ export class HeroService {
   ) {}
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl).pipe(
-      tap(_ => this.log('fetched heroes')),
-      catchError(this.handleError('getHeroes', []))
-    );
+    return this.http
+      .get<Hero[]>(HeroService.heroesUrl)
+      .pipe(
+        tap(_ => this.log('fetched heroes')),
+        catchError(this.handleError('getHeroes', []))
+      );
   }
 
   /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
+    return this.http.get<Hero>(`${HeroService.heroesUrl}/${id}`).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
