@@ -9,11 +9,8 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
-      declarations: [
-        HeroesComponent,
-        MockComponent({ selector: 'app-hero-detail', inputs: ['hero'] })
-      ]
+      imports: [RouterTestingModule],
+      declarations: [HeroesComponent]
     }).compileComponents();
   }));
 
