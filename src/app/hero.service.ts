@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HeroService {
-  static heroesUrl = 'http://api/heroes'; // URL to web api
+  static heroesUrl = 'api/heroes'; // URL to web api
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
